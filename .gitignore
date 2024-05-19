@@ -1,3 +1,7 @@
+#directories
+out
+build
+
 # Compiled class file
 *.class
 
