@@ -15,7 +15,7 @@ public class CountryCentral {
         graph = new Graph();
         countryPoints = new HashMap<>();
         try {
-            File file = new File("C:\\JavaProj\\CentralCountryTask\\src\\GEODATASOURCE-COUNTRY-BORDERS.CSV");
+            File file = new File("C:\\prj\\java\\dataStrutures\\CentralCountryTask\\src\\GEODATASOURCE-COUNTRY-BORDERS.CSV");
             BufferedReader br = new BufferedReader(new FileReader(file));
             String line = br.readLine();
             while ((line = br.readLine()) != null) {
