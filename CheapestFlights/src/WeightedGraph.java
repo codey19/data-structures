@@ -1,22 +1,22 @@
 import java.util.*;
 public class WeightedGraph {
-    private Map<Vertex, HashSet<Edge>> vertexEdgeMap;
+    private Map<Vertex, HashSet<Edge>> edges;
 
     public WeightedGraph() {
-        vertexEdgeMap = new HashMap<>();
+        edges = new HashMap<>();
     }
 
-    public void addEdge(Vertex v1, Vertex v2, int d) {
-        addEdge(new Edge(v1, v2, d));
-        addEdge(new Edge(v2, v1, d));
+    public void addEdge(Vertex v1, Vertex v2, int d, String description) {
+        addEdge(new Edge(v1, v2, d , description));
+        addEdge(new Edge(v2, v1, d, description));
     }
 
     public void addEdge(Edge edge) {
-        Vertex v1 = edge.getV1();
-        if (!vertexEdgeMap.containsKey(v1)) {
-            vertexEdgeMap.put(v1, new HashSet<>());
+        Vertex v1 = edge.getStart();
+        if (!edges.containsKey(v1)) {
+            edges.put(v1, new HashSet<>());
         }
-        vertexEdgeMap.get(v1).add(edge);
+        edges.get(v1).add(edge);
     }
 
     public Set<Vertex> getVertices() {
